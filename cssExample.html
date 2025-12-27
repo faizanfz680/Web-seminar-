@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Example</title>
+<style>
+body{background:#0f0f0f;color:white;text-align:center;font-family:Arial}
+.box{width:650px;margin:20px auto;background:#181818;padding:20px;border-radius:10px}
+textarea{width:100%;height:140px;background:black;color:#00ff6a}
+iframe{width:100%;height:260px;background:white}
+.explain{
+ background:#222;
+ padding:12px;
+ border-radius:10px;
+ margin-top:20px;
+ text-align:left;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="history.back()" style="padding:10px;margin:10px;">⬅ Back</button>
+
+<h1 id="title"></h1>
+
+<div class="box">
+
+<h3>HTML Code</h3>
+<textarea id="htmlCode"></textarea>
+
+<h3>CSS Code</h3>
+<textarea id="cssCode"></textarea>
+
+<br><br>
+<button onclick="run()">Run</button>
+
+<h2>Output</h2>
+<iframe id="output"></iframe>
+
+<h2>Explanation</h2>
+<div class="explain" id="explainBox"></div>
+
+</div>
+
+<script>
+
+const p=new URLSearchParams(location.search);
+const c=p.get("chapter");
+
+// COLORS --------------------
+if(c=="color"){
+title.innerHTML="CSS Colors";
+htmlCode.value=`<h1>Color Example</h1>
+<p>This text has CSS Color</p>`;
+cssCode.value=`h1{color:red}
+p{color:blue}`;
+
+explainBox.innerHTML =
+`<b>h1{color:red}</b> → Changes heading color to red<br>
+<b>p{color:blue}</b> → Changes paragraph color to blue<br>
+<b>Why?</b><br>
+To make text attractive & readable.`;
+}
+
+// TEXT --------------------
+if(c=="text"){
+title.innerHTML="Text Styling";
+htmlCode.value=`<h1>Text Example</h1>
+<p>This text is styled</p>`;
+cssCode.value=`h1{text-transform:uppercase;text-align:center}
+p{font-size:20px;color:orange}`;
+
+explainBox.innerHTML=
+`<b>text-transform:uppercase</b> → Makes text CAPITAL<br>
+<b>text-align:center</b> → Moves text to center<br>
+<b>font-size:20px</b> → Makes text bigger<br>
+<b>Why?</b><br>
+To improve design & readability.`;
+}
+
+// BOX MODEL --------------------
+if(c=="box"){
+title.innerHTML="Box Model";
+htmlCode.value=`<div>Box Model</div>`;
+cssCode.value=
+`div{
+width:150px;
+height:100px;
+background:yellow;
+padding:20px;
+margin:20px;
+border:4px solid black}`;
+
+explainBox.innerHTML=
+`<b>width / height</b> → Box size<br>
+<b>background</b> → Box color<br>
+<b>padding</b> → Space inside box<br>
+<b>margin</b> → Gap outside box<br>
+<b>border</b> → Box outline<br>
+<b>Why?</b><br>
+To design perfect layout.`;
+}
+
+// BORDER ------------------------
+if(c=="border"){
+title.innerHTML="Borders";
+htmlCode.value=`<h1>Border Example</h1>`;
+cssCode.value=
+`h1{
+border:5px dashed red;
+padding:10px}`;
+
+explainBox.innerHTML=
+`<b>border:5px dashed red</b> → Size + style + color<br>
+<b>padding</b> → Space inside heading<br>
+<b>Why?</b><br>
+To highlight headings.`;
+}
+
+// ANIMATION --------------------
+if(c=="animation"){
+title.innerHTML="Animation";
+htmlCode.value=`<div class='box'>Animating</div>`;
+cssCode.value=
+`.box{
+width:120px;
+height:120px;
+background:red;
+animation:move 3s infinite;
+}
+@keyframes move{
+0%{transform:translateX(0)}
+50%{transform:translateX(150px);background:blue}
+100%{transform:translateX(0);background:red}
+}`;
+
+explainBox.innerHTML=
+`<b>animation:move 3s infinite</b> → Runs animation forever<br>
+<b>@keyframes</b> → Defines animation steps<br>
+<b>transform</b> → Moves object<br>
+<b>Why?</b><br>
+To make websites attractive & modern.`;
+}
+
+function run(){
+let doc=output.contentWindow.document;
+doc.open();
+doc.write(htmlCode.value+"<style>"+cssCode.value+"</style>");
+doc.close();
+}
+</script>
+
+</body>
+</html>

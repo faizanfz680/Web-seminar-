@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Example</title>
+<style>
+body{background:#0f0f0f;color:white;text-align:center;font-family:Arial}
+.box{width:650px;margin:20px auto;background:#181818;padding:20px;border-radius:10px}
+textarea{width:100%;height:140px;background:black;color:#00ff6a}
+iframe{width:100%;height:260px;background:white}
+.explain{
+ background:#222;
+ padding:12px;
+ border-radius:10px;
+ margin-top:20px;
+ text-align:left;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="history.back()" style="padding:10px;margin:10px;">⬅ Back</button>
+
+<h1 id="title"></h1>
+
+<div class="box">
+
+<h3>HTML</h3>
+<textarea id="htmlCode"></textarea>
+
+<h3>JavaScript</h3>
+<textarea id="jsCode"></textarea>
+
+<br><br>
+<button onclick="run()">Run</button>
+
+<h2>Output</h2>
+<iframe id="output"></iframe>
+
+<h2>Explanation</h2>
+<div class="explain" id="explainBox"></div>
+
+</div>
+
+<script>
+
+const p=new URLSearchParams(location.search);
+const c=p.get("chapter");
+
+// ALERT ------------------
+if(c=="alert"){
+title.innerHTML="Alert Box";
+htmlCode.value=`<h1>Alert Example</h1>`;
+jsCode.value=
+`alert("Hello Students")
+console.log("Alert Running")`;
+
+explainBox.innerHTML=
+`<b>alert()</b> → Shows popup box<br>
+<b>console.log()</b> → Prints message in console<br>
+<b>Why?</b><br>
+To show message / warnings.`;
+}
+
+// BUTTON ------------------
+if(c=="button"){
+title.innerHTML="Button Click";
+htmlCode.value=
+`<button onclick="hello()">Click Me</button>`;
+jsCode.value=
+`function hello(){
+alert("Button Clicked!")
+}`;
+
+explainBox.innerHTML=
+`<b>onclick</b> → Runs function when button clicked<br>
+<b>function hello()</b> → Block of code<br>
+<b>alert()</b> → Shows popup<br>
+<b>Why?</b><br>
+To add interactivity.`;
+}
+
+// CHANGE TEXT --------------
+if(c=="change"){
+title.innerHTML="Change Text";
+htmlCode.value=
+`<h1 id='a'>Hello</h1>
+<button onclick="change()">Change</button>`;
+jsCode.value=
+`function change(){
+document.getElementById("a").innerHTML="Text Changed"
+}`;
+
+explainBox.innerHTML=
+`<b>id='a'</b> → Unique name<br>
+<b>getElementById()</b> → Finds element<br>
+<b>.innerHTML</b> → Changes text<br>
+<b>Why?</b><br>
+To update content dynamically.`;
+}
+
+// COUNTER -----------------
+if(c=="counter"){
+title.innerHTML="Counter";
+htmlCode.value=
+`<h1 id='x'>0</h1>
+<button onclick="add()">+</button>`;
+jsCode.value=
+`let a=0;
+function add(){
+a++;
+document.getElementById("x").innerHTML=a;
+}`;
+
+explainBox.innerHTML=
+`<b>let a=0</b> → Starting value<br>
+<b>a++</b> → Increase value<br>
+<b>.innerHTML</b> → Show updated number<br>
+<b>Why?</b><br>
+Used in games, apps, score counting.`;
+}
+
+// CHANGE COLOR --------------
+if(c=="color"){
+title.innerHTML="Change Color";
+htmlCode.value=
+`<h1 id='t'>Change Color</h1>
+<button onclick="clr()">Change</button>`;
+jsCode.value=
+`function clr(){
+document.getElementById("t").style.color="red"
+}`;
+
+explainBox.innerHTML=
+`<b>.style.color</b> → Changes text color<br>
+<b>Why?</b><br>
+To change design using JavaScript.`;
+}
+
+function run(){
+let doc=output.contentWindow.document;
+doc.open();
+doc.write(htmlCode.value+"<script>"+jsCode.value+"<\\/script>");
+doc.close();
+}
+</script>
+
+</body>
+</html>

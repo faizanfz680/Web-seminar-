@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Chapters</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0b0b0b;color:white;font-family:Arial;text-align:center}
+
+header{
+ background:#111;
+ padding:15px;
+ display:flex;
+ align-items:center;
+ gap:10px;
+ box-shadow:0 0 20px black;
+}
+header img{width:40px}
+h1{margin-top:10px}
+
+.container{
+ width:90%;
+ max-width:500px;
+ margin:40px auto;
+}
+
+.card{
+ background:linear-gradient(45deg,#202020,#2e2e2e);
+ padding:18px;
+ margin-top:10px;
+ border-radius:12px;
+ border:1px solid #333;
+ transition:.3s;
+}
+.card:hover{
+ transform:scale(1.05);
+ border-color:#0af;
+}
+
+.back{
+ margin:10px;
+ padding:8px 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <img src="https://img.icons8.com/color/96/html-5.png">
+ <h2>HTML Learning Chapters</h2>
+</header>
+
+<button onclick="history.back()" class="back">⬅ Back</button>
+
+<div class="container">
+<div class="card" onclick="go('headings')">HTML Headings</div>
+<div class="card" onclick="go('paragraphs')">HTML Paragraphs</div>
+<div class="card" onclick="go('lists')">HTML Lists</div>
+<div class="card" onclick="go('links')">HTML Links</div>
+<div class="card" onclick="go('images')">HTML Images</div>
+</div>
+
+<script>
+function go(c){
+ location.href="htmlExample.html?chapter="+c;
+}
+</script>
+
+</body>
+</html>

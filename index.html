@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Seminar</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#0a0a0a;
+  color:white;
+  font-family:Arial;
+}
+
+header{
+  background:#111;
+  padding:15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow:0 0 20px #000;
+}
+header img{
+  width:45px;
+}
+.title{
+  font-size:22px;
+  letter-spacing:1px;
+}
+
+.container{
+  width:90%;
+  max-width:500px;
+  margin:70px auto;
+  text-align:center;
+}
+
+.box{
+  background:linear-gradient(45deg,#1f1f1f,#2b2b2b);
+  padding:25px;
+  margin-top:18px;
+  border-radius:15px;
+  cursor:pointer;
+  transition:.3s;
+  font-size:20px;
+  border:1px solid #444;
+}
+.box:hover{
+  transform:scale(1.07);
+  background:#333;
+  border-color:#0af;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <img src="https://img.icons8.com/color/96/programming.png">
+ <div class="title">Web Development Seminar</div>
+</header>
+
+<div class="container">
+
+<div class="box" onclick="location.href='htmlChapters.html'">HTML Learning</div>
+<div class="box" onclick="location.href='cssChapters.html'">CSS Styling</div>
+<div class="box" onclick="location.href='jsChapters.html'">JavaScript Logic</div>
+
+</div>
+
+</body>
+</html>
