@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thank You</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ font-family:Arial;
+ color:white;
+ background:linear-gradient(45deg,#0d0d0d,#0d1b2a,#16213e,#000000);
+ background-size:400% 400%;
+ animation:bgMove 12s infinite alternate;
+}
+
+/* Background Animation */
+@keyframes bgMove{
+ 0%{background-position:0% 50%}
+ 100%{background-position:100% 50%}
+}
+
+.container{
+ width:90%;
+ max-width:650px;
+ background:#121212;
+ padding:30px;
+ border-radius:18px;
+ border:1px solid #333;
+ box-shadow:0 0 40px #000;
+ text-align:center;
+}
+
+/* Animated Thank You Text */
+.thankText{
+ font-size:40px;
+ font-weight:bold;
+ color:#0aff63;
+ letter-spacing:2px;
+ animation:pop 1.8s infinite;
+}
+
+@keyframes pop{
+ 0%{transform:scale(1);opacity:0.7}
+ 50%{transform:scale(1.2);opacity:1}
+ 100%{transform:scale(1);opacity:0.7}
+}
+
+p{
+ margin-top:15px;
+ line-height:26px;
+ font-size:16px;
+}
+
+.section{
+ margin-top:25px;
+ background:#181818;
+ padding:15px;
+ border-radius:12px;
+ border:1px solid #333;
+ text-align:left;
+}
+
+.section h3{
+ color:#0aff63;
+ margin-bottom:8px;
+}
+
+/* Buttons */
+button{
+ margin-top:15px;
+ padding:10px 22px;
+ border:none;
+ border-radius:10px;
+ font-size:16px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+.back{
+ background:#0aff63;
+ color:black;
+}
+.back:hover{
+ transform:scale(1.05);
+ background:#11ff75;
+}
+
+.certificate{
+ background:#0099ff;
+ color:white;
+}
+.certificate:hover{
+ transform:scale(1.05);
+ background:#00b3ff;
+}
+
+/* Credits list */
+ul{
+ margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="thankText">THANK YOU 🙏</h1>
+
+<p>
+This seminar helped us understand HTML, CSS and JavaScript  
+with real live practice, coding examples and clear explanations.
+<br><br>
+Thank you respected Teachers and Friends for your support and attention.
+</p>
+
+<div class="section">
+<h3>Special Thanks To</h3>
+<ul>
+<li>Our Respected Faculty</li>
+<li>All My Friends & Classmates</li>
+</ul>
+</div>
+
+<div class="section">
+<h3>Credits</h3>
+<ul>
+  <li>Developed & Presented By: <b>Faizan</b></li>
+<li>Seminar Topic: Web Development</li>
+<li>Technologies Used: HTML, CSS, JavaScript</li>
+</ul>
+</div>
+
+<button >
+🏆 Developed by Faizan
+</button>
+
+<br>
+
+<button class="back" onclick="location.href='index.html'">
+⬅ Back to Home
+</button>
+
+</div>
+
+</body>
+</html>
